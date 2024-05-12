@@ -8,13 +8,8 @@ import re
 import time
 import os
 
-##### logging utilities
-PURPLE = "\033[94m"
-GREEN = "\033[92m"
-RED = "\033[91m"
-RESET = "\033[0m"
+urls = ['https://www.dawn.com/', 'https://www.bbc.com/']
 
-##### lifecycle functions
 def extract_data(url):
     start_time = time.strftime("%Y%m%d-%H%M%S")
     print(f"\nExtracting data from {url}")
@@ -81,8 +76,7 @@ def dvc_push():
     os.system('dvc add data/extracted.csv')
     os.system('dvc push')
 
-urls = ['https://www.dawn.com/', 'https://www.bbc.com/']
-filename = "/mnt/d/Study/Mlops/airflow-data-extraction-pipeline/data/extracted.csv"
+filename = "/extracted.csv"
 
 def extract_data_task(urls):
     print("Extract data task")
