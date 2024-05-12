@@ -1,0 +1,6 @@
+airflow*
+webserver_config.py
+/logs
+/virtual
+
+__pycache__
